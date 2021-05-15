@@ -5,6 +5,10 @@
 
 ## prerequisite: wget, firewalld
 
+
+echo "Create the blacklist ipset"
+  firewall-cmd --permanent --new-ipset=blacklist --type=hash:net --option=family=inet --option=hashsize=4096 --option=maxelem=200000
+
 # this is where we'll keep the ip lists
 BLACKLIST_DIR=/opt/blacklist 
 
